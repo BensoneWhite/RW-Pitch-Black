@@ -52,7 +52,7 @@ class Plugin : BaseUnityPlugin
         };
 
         Content.Register(new LMLLCritob());
-        Content.Register(new RotRatCritob());
+        //Content.Register(new RotRatCritob()); (ONLY 1.0!)
         Content.Register(new NightTerrorCritob());
         ScareEverything.Apply();
 
@@ -81,23 +81,25 @@ class Plugin : BaseUnityPlugin
         PBPOMDarkness.RegisterDarkness();
         ReliableCreatureSpawner.RegisterSpawner();
         CreatureSpawnerHooks.Apply();
-        TeleportWater.Register();
-        BreathableWater.Register();
+        //TeleportWater.Register(); (ONLY 1.0!)
+        //BreathableWater.Register(); (ONLY 1.0!)
 
         EchoMusic.Apply();
 
         PBFrozenCycleTimer.Apply();
         //OverseerHooks.Apply(); (ONLY 1.0!)
 
-        //NightDay.Apply(); //unfinished
         PassageHooks.Apply();
 
+        #region old hooks
+        //NightDay.Apply();
         //On.Player.GraspsCanBeCrafted += Player_GraspsCanBeCrafted;
         //On.Player.SpitUpCraftedObject += Player_SpitUpCraftedObject;
         //On.PlayerGraphics.DrawSprites += PlayerGraphics_DrawSprites;
         //On.Player.CanBeSwallowed += Player_CanBeSwallowed;
         //On.Player.SwallowObject += Player_SwallowObject1;
         //On.Player.Grabability += GrabCoalescipedes;
+        #endregion
     }
     public void OnModsInit(On.RainWorld.orig_OnModsInit orig, RainWorld self)
     {
